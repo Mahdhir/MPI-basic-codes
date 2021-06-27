@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
 	if (rank == root) {
 		printf("\nThis is the result of the parallel computation:\n\n");
 		for (k = 0; k < NCOLS; k++) {
-			printf("A[0]=%g\n", A[k]);
+			printf("A[%d]=%g\n", k, A[k]);
 		}
 		for (k = 0; k < NCOLS; k++) {
 			A_exact[k] = 0.0;
@@ -55,7 +55,7 @@ int main(int argc, char** argv) {
 		}
 		printf("\nThis is the result of the serial computation:\n\n");
 		for (k = 0; k < NCOLS; k++) {
-			printf("A_exact[0]=%g\n", A_exact[k]);
+			printf("A_exact[%d]=%g\n", k, A_exact[k]);
 		}
 	}
 	MPI_Finalize();
